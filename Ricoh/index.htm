@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un piccolo esempio</title>
+    <link rel="stylesheet" href="/Ricoh/pannellum/pannellum.css"/>
+    <script type="text/javascript" src="/Ricoh/pannellum/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="panorama"></div>
+<!--<script>
+pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "/Ricoh/immagini/R0011079.JPG"
+});
+</script>
+-->
+
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "Soggiorno",
+        "author": "Andy e Walter",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "Soggiorno": {
+            "title": "Soggiorno",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": -100,
+            "type": "equirectangular",
+            "panorama": "/Ricoh/immagini/R0011079.JPG",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -65,
+                    "type": "scene",
+                    "text": "AntiBagno",
+                    "sceneId": "AntiBagno"
+                }
+            ]
+        },
+
+        "AntiBagno": {
+            "title": "AntiBagno",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "/Ricoh/immagini/R0011080.JPG",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": -120,
+                    "type": "scene",
+                    "text": "Soggiorno",
+                    "sceneId": "Soggiorno",
+                    "targetYaw": -90,
+                    "targetPitch": 2
+                },
+				
+				{
+                    "pitch": -0.6,
+                    "yaw": -220,
+                    "type": "scene",
+                    "text": "Bagno",
+                    "sceneId": "Bagno",
+                    "targetYaw": 0,
+                    "targetPitch": 2
+                }
+            ]
+        },
+		
+		
+        "Bagno": {
+            "title": "Bagno",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 170,
+            "type": "equirectangular",
+            "panorama": "/Ricoh/immagini/R0011081.JPG",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 150,
+                    "type": "scene",
+                    "text": "AntiBagno",
+                    "sceneId": "AntiBagno"
+                }
+            ]
+        }
+    }
+});
+</script>
+
+
+
+</body>
+</html>
